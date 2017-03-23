@@ -56,6 +56,31 @@ document.write(typeof Symbol() + "<br />");
 document.write(typeof {a:1} + "<br />");
 document.write(typeof [1,2,3] + "<br />");
 document.write(typeof undefined + "<br />");
+
+
+//Difference between functions in ECMA
+function circleArea1(r){
+  var PI=3.14;
+  return PI* r*r;
+}
+
+let circleArea2 = (r) =>{
+  let PI = 3.14;
+  return PI * r* r;
+};
+
+document.write(circleArea1(7));
+document.write("<br/>");
+document.write(circleArea2(8));
+
+document.write("<br/>");
+
+
+
+
+
+
+
  
 // ---------- STRINGS ----------
 // You can use string interpolation using template
