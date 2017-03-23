@@ -58,23 +58,79 @@ document.write(typeof [1,2,3] + "<br />");
 document.write(typeof undefined + "<br />");
 
 
-//Difference between functions in ECMA
+
+
+
+
+//===================================================================================
+//Difference between functions in ECMA  ARROW functions
+
 function circleArea1(r){
+
   var PI=3.14;
   return PI* r*r;
 }
 
 let circleArea2 = (r) =>{
-  let PI = 3.14;
+  const PI = 3.14;
   return PI * r* r;
 };
+
+let circleArea3 = r => 3.14* r *r;   // whenever there is just parameter, no need to include brackets in that case (r)
 
 document.write(circleArea1(7));
 document.write("<br/>");
 document.write(circleArea2(8));
+document.write("<br/>");
+document.write(circleArea3(10));
 
 document.write("<br/>");
 
+
+
+
+//===================================================================================
+
+// SPREAD OPERATORS
+
+
+function addNumbers(a, b, c){
+    console.log(a + b + c);
+}
+
+// expand array into function arguments
+var nums = [3, 4, 5];
+addNumbers(...nums);
+
+// used to combine arrays
+var meats = ['bacon', 'ham'];
+var food = ['apples', ...meats, 'kiwi', 'rice']; //JUST SPREAD IT OUT LIKE DOTS AND ARRAY IS ADDED
+console.log(food);
+
+//===================================================
+
+//CLASSES
+
+
+class Person{
+
+    constructor(name, age, weight){
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+
+    displayWeight(){
+        console.log(this.weight);
+    }
+
+}
+
+let PULKIT = new Person('PULKIT', 87, 6650);
+let TOM = new Person('TOM', 21, 89);
+
+PULKIT.displayWeight();
+TOM.displayWeight();
 
 
 
